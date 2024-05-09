@@ -5,20 +5,20 @@ const COLLECTION_NAME = 'carti';
 
 const getRecords = async () => {
 	const collection = await getCollection(COLLECTION_NAME);
-	return await collection.find({}).toArray();
+	return collection.find({}).toArray();
 }
 
 const getRecord = async (id) => {
     const collection = await getCollection(COLLECTION_NAME);
-    return await collection.findOne({_id: ObjectId.createFromHexString(id)});
+    return collection.findOne({_id: ObjectId.createFromHexString(id)});
 }
 
-const createRecord = async (record) => {
+const postRecord = async (record) => {
 	const collection = await getCollection(COLLECTION_NAME);
-	return await collection.insertOne(record);
+	return collection.insertOne(record);
 }
 
-const updateRecord = async (record) => {
+const putRecord = async (record) => {
 	const collection = await getCollection(COLLECTION_NAME);
 	const id = record._id;
 	delete record._id;
@@ -33,8 +33,7 @@ const deleteRecord = async (id) => {
 export default async function handler(req, res) {
 
 	const isAllowedMethod = req.method === 'GET' || req.method === 'POST' || req.method === 'PUT' || req.method === 'DELETE';
-	
-    if(!isAllowedMethod) {
+	if(!isAllowedMethod) {
 		return sendMethodNotAllowed(res);
 	}
 
@@ -49,12 +48,12 @@ export default async function handler(req, res) {
 	}
 	else if(req.method === 'POST') {
 		const record = req.body;
-		const result = await createRecord(record);
+		const result = await postRecord(record);
 		return sendOk(res, result);
 	}
 	else if(req.method === 'PUT') {
 		const record = req.body;
-		const result = await updateRecord(record);
+		const result = await putRecord(record);
 		return sendOk(res, result);
 	}
 	else if(req.method === 'DELETE') {
