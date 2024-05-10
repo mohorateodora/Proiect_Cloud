@@ -23,3 +23,14 @@ https://github.com/mohorateodora/Proiect_Cloud
 <p>Pentru o vizualizare mai facilă a funcționalităților soluției mele am realizat o prezentare salvată pe YouTube la categoria 'Nelistat', unde se poate vedea workflow-ului aplicației, disponibilă pe link-ul: https://youtu.be/1STzH6OsbT4 </p>
 <h2>4.	Capturi ecran aplicație </h2>
 <p>Interfața aplicației cu cărțile introduse de administratori.</p>
+![1](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/2d26e737-6baa-4b78-bf8c-15ccb04560b9)
+<p>Baza de date din MongoDB</p>
+![2](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/9f5fa05d-372c-47bf-b7ca-75527cffeead)
+<p>Formularul de modificare a unei cărți cu toate valorile atributelor preluate:</p>
+![3](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/dc1ac6cf-f685-4529-abcd-19ed41e2dbf4)
+<p>Pagina inițială după modificarea prețului cărții Moromeții și ștergerea cărții Invitație la vals:</p>
+![4](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/5670055f-293c-4bd6-8a21-d7932ae4f150)
+<p>Baza de date MongoDB după aceste modificări:</p>
+![5](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/61f4390a-350e-4174-b917-921a75f9eac3)
+
+
