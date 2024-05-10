@@ -47,6 +47,7 @@ export const createRecord = async (record) => {
 
         const data = await response.json();
 
+        
         if (!data?.data) {
             return null;
         }
