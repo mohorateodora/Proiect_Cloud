@@ -23,7 +23,7 @@ https://github.com/mohorateodora/Proiect_Cloud
 <p>Pentru o vizualizare mai facilă a funcționalităților soluției mele am realizat o prezentare salvată pe YouTube la categoria 'Nelistat', unde se poate vedea workflow-ului aplicației, disponibilă pe link-ul: https://youtu.be/1STzH6OsbT4 </p>
 <h2>4.	Capturi ecran aplicație </h2>
 <p>Interfața aplicației cu cărțile introduse de administratori.</p>
-![alt text](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/2d26e737-6baa-4b78-bf8c-15ccb04560b9)
+![1](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/2d26e737-6baa-4b78-bf8c-15ccb04560b9)
 <p>Baza de date din MongoDB</p>
 ![2](https://github.com/mohorateodora/Proiect_Cloud/assets/72292100/9f5fa05d-372c-47bf-b7ca-75527cffeead)
 <p>Formularul de modificare a unei cărți cu toate valorile atributelor preluate:</p>
