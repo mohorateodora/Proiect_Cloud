@@ -13,10 +13,10 @@ const MainPage = () => {
             setData(response);
             //setIsLoading(false);
         } catch (error) {
-            console.log(error);
+            console.error(error);
 
            // setIsLoading(false);
-        }
+        };
     }
 
     const handleDeleteRecord = async (id) => {
@@ -56,7 +56,7 @@ const MainPage = () => {
         <br></br>
         
         <div className="p-4 flex flex-wrap gap-4">
-            {data?.map((record) => (
+            {data.map((record) => (
                 <div key={record._id} className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <h5 className="mb-2 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{record.denumire}</h5>
                     <h5 className="mb-2 font-normal text-gray-800  text-3xl text-[#910a2a] dark:text-gray-600">{record.autor}</h5>
