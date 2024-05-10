@@ -6,16 +6,16 @@ import { useRouter } from 'next/router';
 const MainPage = () => {
     const router=useRouter();
     const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    //const [isLoading, setIsLoading] = useState(true);
     const fetchRecords = async () => {
         try {
             const response = await getRecords();
             setData(response);
-            setIsLoading(false);
+            //setIsLoading(false);
         } catch (error) {
             console.log(error);
 
-            setIsLoading(false);
+           // setIsLoading(false);
         }
     }
 
