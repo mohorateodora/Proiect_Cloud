@@ -1,4 +1,5 @@
 export const carteDefaultValues = {
+    _id: "",
     denumire: "",
     autor: "",
     descriere: "",

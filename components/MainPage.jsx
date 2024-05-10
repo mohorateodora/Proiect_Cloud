@@ -23,21 +23,21 @@ const MainPage = () => {
         try {
           const response = await deleteRecord(id);
     
-          /*if (response.deletedCount === 1) {
-            const newRecords = carti.filter((record) => record._id !== id);
-            setRecords(newRecords);
-          }*/
-          if (response?.acknowledged) {
+          if (response.deletedCount === 1) {
+            const newRecords = data.filter((record) => record._id !== id);
+            setData(newRecords);
+          }
+          /*if (response?.acknowledged) {
             const newData = data.filter(el=>el._id !== id);
             setData(newData);
-          }
+          }*/
         } catch (error) {
           console.log(error)
         }
       };
     
       const handleUpdateRecord = (id) => {
-        router.push(`/carti/edit?id=${id}`);
+        router.push(`/edit?id=${id}`);
       };
 
     useEffect(() => { fetchRecords(); }, []);
@@ -64,7 +64,10 @@ const MainPage = () => {
                     <p className="mb-3 font-normal text-gray-700 font-bold text-[#0d3436] text-xl mt-5 font-bold dark:text-gray-400">{record.categorie}</p>
                     <p className="mb-3 font-normal text-gray-700 text-2xl dark:text-gray-400">{record.stare}</p>
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{record.pret}</h5>
-                    <button type="button"  onClick={()=>handleUpdateRecord(record._id)} className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Modifică</button>
+                    <button type="button" 
+                     onClick={()=>handleUpdateRecord(record._id)} 
+                     className="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+                      Modifică</button>
                     <button type="button" onClick={()=>handleDeleteRecord(record._id)} className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Șterge</button>
                 </div>
             ))}
@@ -73,4 +76,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage
+export default MainPage;

@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 
 const CarteForm = (props) => {
     const router=useRouter();
-    const { entry, onSubmit } = props;
-    const [data, setData] = useState(entry);
+    const { data, onSubmit } = props;
+    const [entry, setEntry] = useState(data);
 
-    const handleChange = (type, value) => {
-        setData({ ...data, [type]: value });
+    const updateEntry = (type, value) => {
+        setEntry({ ...entry, [type]: value });
     };
 
     const handleCancel=()=>{
@@ -28,10 +28,10 @@ const CarteForm = (props) => {
                         Denumire carte
                     </label>
                     <input
-                        type="denumire"
+                        type="text"
                         id="denumire"
-                        value={data.denumire}
-                        onChange={(e) => handleChange("denumire", e.target.value)}
+                        value={entry.denumire}
+                        onChange={(e) => updateEntry("denumire", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Introdu denumirea cărții "
                         required
@@ -48,8 +48,8 @@ const CarteForm = (props) => {
                     <input
                         type="autor"
                         id="autor"
-                        value={data.autor}
-                        onChange={(e) => handleChange("autor", e.target.value)}
+                        value={entry.autor}
+                        onChange={(e) => updateEntry("autor", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Introdu autorul cărții  "
                         required
@@ -66,8 +66,9 @@ const CarteForm = (props) => {
                     <input
                         type="descriere"
                         id="descriere"
-                        value={data.descriere}
-                        onChange={(e) => handleChange("descriere", e.target.value)}
+                        rows="4"
+                        value={entry.descriere}
+                        onChange={(e) => updateEntry("descriere", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Scrie o descriere a cărții "
                         required
@@ -84,8 +85,8 @@ const CarteForm = (props) => {
                     <input
                         type="categorie"
                         id="categorie"
-                        value={data.categorie}
-                        onChange={(e) => handleChange("categorie", e.target.value)}
+                        value={entry.categorie}
+                        onChange={(e) => updateEntry("categorie", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Introdu genul cărții  "
                         required
@@ -102,8 +103,8 @@ const CarteForm = (props) => {
                     <input
                         type="stare"
                         id="stare"
-                        value={data.stare}
-                        onChange={(e) => handleChange("stare", e.target.value)}
+                        value={entry.stare}
+                        onChange={(e) => updateEntry("stare", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Evaluează starea cărții  "
                         required
@@ -120,8 +121,8 @@ const CarteForm = (props) => {
                     <input
                         type="pret"
                         id="pret"
-                        value={data.pret}
-                        onChange={(e) => handleChange("pret", e.target.value)}
+                        value={entry.pret}
+                        onChange={(e) => updateEntry("pret", e.target.value)}
                         className="block py-2.5 px-0 w-full text-[20px]text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                         placeholder="Introdu prețul cărții  "
                         required
@@ -136,9 +137,9 @@ const CarteForm = (props) => {
                         Renunță</button>
                     <button
                         type="button"
-                        onClick={()=>onSubmit(data)}
+                        onClick={()=>onSubmit(entry)}
                         className=" text-[30px] text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700  gap-4 dark:focus:ring-green-800">
-                        Salvează</button>
+                        {entry._id ? "Modifică" : "Crează"}</button>
                 </div>
             </form>
 

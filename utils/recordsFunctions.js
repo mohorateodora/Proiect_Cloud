@@ -15,7 +15,6 @@ export const getRecords = async () => {
         console.error(error);
     }
 }
-
 export const getRecordById = async (id) => {
     try {
         const response = await fetch(`/api/carti?id=${id}`, {
